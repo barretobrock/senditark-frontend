@@ -34,6 +34,11 @@ const routes = [
         component: lazy(() => import('./views/dashboard/Dashboard'))
     },
     {
+        exact: true,
+        path: '/test',
+        component: lazy(() => import('./views/Test'))
+    },
+    {
         path: '*',
         layout: AdminLayout,
         routes: [
