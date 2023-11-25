@@ -4,6 +4,19 @@
 .nvtooltip {
   position: fixed !important;
 }
+
+.nvd3 text {
+  fill: $menu-dark-text-color;
+}
+
+.nvd3 .nv-axis line {
+  stroke: $menu-dark-background;
+}
+
+.nvd3 .nv-axis .zero line {
+  stroke: $menu-light-background;
+}
+
 .peity-chart {
   + .peity {
     width: 100%;

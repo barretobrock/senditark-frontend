@@ -44,9 +44,9 @@ $info-color: #3ebfea;
 $secondary-color: #748892;
 $default-color: #d6d6d6;
 $light-color: #f2f2f2;
-$dark-color: #37474f;
+$dark-color: #2ba6e5;  // 37474f
 $inverse-color: $dark-color;
-$theme-border: #eaeaea;
+$theme-border: #6c879f;
 
 // header
 $brand-background: #3f4d67;
@@ -57,14 +57,14 @@ $header-light-text-color: #3f4d67;
 
 // Menu
 $menu-caption-color: #14171d;
-$menu-dark-background: #1F2633;
+$menu-dark-background: #353d4b;  //1F2633  - Menu
 $menu-dark-text-color: #a9b7d0;
 $menu-light-background: #fff;
 $menu-light-text-color: #3f4d67;
 $menu-active-color: #04a9f5;
 
 // dark layout colors
-$dark-layout: #212224;
+$dark-layout: #2659be;  // 212224
 $dark-layout-font: #adb7be;
 
 // Menu icon
@@ -87,9 +87,10 @@ $layout-6-bg-color: #23b7e5;
 
 $theme-font-family: 'Open Sans', sans-serif;
 $theme-font-size: 14px;
-$theme-background: #1E2833;
-$theme-font-color: #888;
-$theme-heading-color: #778491;
+$theme-background: #1f2938;  // 1E2833 - Page background
+$theme-obj-background: #4b5360;
+$theme-font-color: #6c879f;
+$theme-heading-color: #9cadbe;
 
 $color-name: c-blue, c-red, c-green, c-yellow, c-purple;
 $color-color: $primary-color, $danger-color, $success-color, $warning-color, $purple-color;
@@ -120,3 +121,13 @@ $theme-color-interval: 8% !default;
 $alert-bg-level: -10 !default;
 $alert-border-level: -9 !default;
 $alert-color-level: 6 !default;
+
+// BS5 Custom Color Mode
+[data-bs-theme="tume"] {
+  --bs-body-bg: #353d4b;
+  --bs-table-color-state: #4b5360;
+  --bs-border-color: #6c879f;
+  --bs-secondary-color: #d2d2d2;
+  --bs-body-color: #6eacf6; // headers, spans outside table
+  --bs-emphasis-color: #d2d2d2;
+}

@@ -1,4 +1,10 @@
 /* new logo start */
+.navlogo {
+  width: 50px;
+  display: flex;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
 
 .b-brand {
   display: flex;
@@ -27,6 +33,13 @@
 }
 
 .navbar-collapsed {
+  .navlogo {
+    width: 36px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .b-brand .b-title {
     transform: rotateY(-90deg);
     transform-origin: 0 0;
@@ -370,7 +383,7 @@
       overflow: hidden;
 
       .noti-head {
-        border-bottom: 1px solid #f1f1f1;
+        border-bottom: 1px solid #6c879f;
         padding: 15px 20px;
 
         a {
@@ -420,7 +433,7 @@
       }
 
       .noti-footer {
-        border-top: 1px solid #f1f1f1;
+        border-top: 1px solid #6c879f;
         padding: 15px 20px;
         text-align: center;
 
@@ -610,7 +623,6 @@
     align-items: center;
     display: inline-flex;
     float: left;
-    height: $header-height;
     text-align: center;
     width: $Menu-width;
     margin-right: 0;
@@ -748,8 +760,8 @@
       &.pcoded-hasmenu {
         > a {
           &:after {
-            content: '\e844';
-            font-family: 'feather';
+            content: '▹';
+            //font-family: 'feather';
             font-size: 15px;
             border: none;
             position: absolute;
@@ -2609,8 +2621,8 @@ $style-block-width: 400px;
       &.active,
       &.pcoded-trigger {
         > a {
-          background: #f1f1f1;
-          color: #111;
+          background: #6c879f;
+          color: #3b6281;
         }
       }
     }
@@ -2655,7 +2667,7 @@ body {
       }
 
       .toggle-sidemenu {
-        background: #f1f1f1;
+        background: #6c879f;
         color: $menu-light-text-color;
       }
 
@@ -3161,7 +3173,7 @@ body {
             &.pcoded-trigger {
               > a {
                 background: #f1f1f1;
-                color: #111;
+                color: #3b6281;
               }
             }
           }
@@ -3329,7 +3341,6 @@ body.box-layout {
     }
 
     .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li > a:before {
-      font-family: 'feather';
       font-style: normal;
       padding-right: 4px;
       font-size: 13px;
@@ -3364,24 +3375,8 @@ body.box-layout {
     }
   }
 
-  &.menu-item-icon-style2 .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li > a:before {
-    content: '\e897';
-  }
-
-  &.menu-item-icon-style3 .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li > a:before {
-    content: '\e83f';
-  }
-
-  &.menu-item-icon-style4 .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li > a:before {
-    content: '\e856';
-  }
-
-  &.menu-item-icon-style5 .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li > a:before {
-    content: '\e847';
-  }
-
   &.menu-item-icon-style6 .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li > a:before {
-    content: '\e844';
+    content: '▹';
   }
 }
 /* ====== [ Menu Item icon end ] ================== */

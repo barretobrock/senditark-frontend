@@ -2,20 +2,21 @@
       Data Tables css start
 ==========================  **/
 .table {
-  color: #888;
+  color: #6c879f;
   td,
   th {
-    border-top: 1px solid $theme-border;
+    border-top: 1px dotted $theme-border;
     white-space: nowrap;
     padding: 1.05rem 0.75rem;
   }
 
   thead th {
-    border-bottom: 1px solid $theme-border;
+    color: #4ab2f5;
+    border-bottom: 1px dotted $theme-border;
   }
 
   tbody + tbody {
-    border-top: 2px solid $theme-border;
+    border-top: 2px dotted $theme-border;
   }
 
   &.table-sm {
@@ -47,7 +48,7 @@
 .table-hover {
   tbody tr {
     &:hover {
-      background-color: transparentize($primary-color, 0.95);
+      background-color: $success-color;
     }
   }
 }
