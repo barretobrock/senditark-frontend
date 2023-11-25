@@ -1,16 +1,13 @@
-import React, { Suspense, Fragment, lazy } from 'react';
-import { Routes, Navigate, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Loader from './components/Loader/Loader';
 import AdminLayout from "./layouts";
-
-import { BASE_URL } from './config/constant';
 
 export const renderRoutes = (routes = []) => (
     <Suspense fallback={<Loader />}>
         <Routes>
             {routes.map((route, i) => {
-                const Layout = route.layout || Fragment;
                 const Component = route.component;
 
                 return (
@@ -18,7 +15,7 @@ export const renderRoutes = (routes = []) => (
                         key={i}
                         path={route.path}
                         exact={route.exact}
-                        element={<AdminLayout><Component /></AdminLayout>}
+                        element={route.routes ? renderRoutes(route.routes): <AdminLayout><Component /></AdminLayout>}
                         // element={(props) => <Layout>{route.routes ? renderRoutes(route.routes) : <Component {...props} />}</Layout>}
                     />
                 );
@@ -35,23 +32,99 @@ const routes = [
     },
     {
         exact: true,
+        path: '/dash',
+        component: lazy(() => import('./views/dashboard/Dashboard'))
+    },
+    {
+        exact: true,
         path: '/test',
         component: lazy(() => import('./views/Test'))
     },
+    // CHART
     {
         path: '*',
-        layout: AdminLayout,
         routes: [
             {
                 exact: true,
-                path: '/dash',
-                component: lazy(() => import('./views/dashboard/Dashboard'))
+                path: '/chart/line',
+                component: lazy(() => import('./views/chart/LineChart'))
             },
-            // {
-            //     exact: true,
-            //     path: '/basic/button',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicButton'))
-            // },
+            {
+                exact: true,
+                path: '/chart/discrete-bar',
+                component: lazy(() => import('./views/chart/LineChart'))
+            },
+            {
+                exact: true,
+                path: '/chart/multi-bar',
+                component: lazy(() => import('./views/chart/MultiBarChart'))
+            },
+            {
+                exact: true,
+                path: '/chart/pie',
+                component: lazy(() => import('./views/chart/PieChart'))
+            },
+            {
+                exact: true,
+                path: '/chart/donut',
+                component: lazy(() => import('./views/chart/DonutChart'))
+            }
+        ]
+    },
+    {
+        exact: true,
+        path: '/forms/form-basic',
+        component: lazy(() => import('./views/forms/FormElements'))
+    },
+    {
+        exact: true,
+        path: '/table/accounts',
+        component: lazy(() => import('./views/tables/Accounts'))
+    },
+    {
+        exact: true,
+        path: '/basic/badges',
+        component: lazy(() => import('./views/elements/BasicBadges'))
+    },
+    {
+        exact: true,
+        path: '/basic/breadcrumb',
+        component: lazy(() => import('./views/elements/BasicBreadcrumb'))
+    },
+    {
+        exact: true,
+        path: '/basic/button',
+        component: lazy(() => import('./views/elements/BasicButton'))
+    },
+    {
+        exact: true,
+        path: '/basic/collapse',
+        component: lazy(() => import('./views/elements/BasicCollapse'))
+    },
+    {
+        exact: true,
+        path: '/basic/notifications',
+        component: lazy(() => import('./views/elements/BasicNotification'))
+    },
+    {
+        exact: true,
+        path: '/basic/pagination',
+        component: lazy(() => import('./views/elements/BasicPagination'))
+    },
+    {
+        exact: true,
+        path: '/basic/tabs-pills',
+        component: lazy(() => import('./views/elements/BasicTabsPills'))
+    },
+    {
+        exact: true,
+        path: '/basic/typography',
+        component: lazy(() => import('./views/elements/BasicTypography'))
+    },
+    {
+        path: '*',
+        routes: [
+
             // {
             //     exact: true,
             //     path: '/basic/badges',
@@ -107,11 +180,11 @@ const routes = [
             //     path: '/sample-page',
             //     component: lazy(() => import('./views/extra/SamplePage'))
             // },
-            {
-                path: '*',
-                exact: true,
-                element: () => <Navigate to={BASE_URL} />
-            }
+            // {
+            //     path: '*',
+            //     exact: true,
+            //     element: () => <Navigate to={BASE_URL} />
+            // }
         ]
     }
 ];

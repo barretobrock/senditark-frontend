@@ -6,6 +6,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 import NavLogo from './NavLogo';
 import NavContent from './NavContent';
 import navigation from '../../menu-items';
+import icon from '../../assets/images/icon.png';
 
 const Navigation = () => {
     const configContext = useContext(ConfigContext);
@@ -135,6 +136,7 @@ const Navigation = () => {
     let navContent = (
         <div className={navBarClass.join(' ')}>
             <NavLogo />
+            <img src={icon} alt={'dollar sign icon'} className={'navlogo'}/>
             <NavContent navigation={navigation.items} />
         </div>
     );

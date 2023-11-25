@@ -1,9 +1,11 @@
-import Accounts from "../utils/requests";
+import FormElements from "./forms/FormElements";
+// import AccountsTable from "./tables/Accounts";
 
 const Test = () => {
     return (
-        <Accounts />
+        <FormElements />
+        // <AccountsTable />
     )
-}
+};
 
 export default Test;

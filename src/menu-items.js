@@ -1,17 +1,39 @@
+import {
+    Coffee,
+    Home,
+    Box,
+    BarChart,
+    UserX,
+    FileText,
+    Navigation,
+    List,
+    Server,
+    Book,
+    Sidebar,
+    Menu, Power
+} from 'react-feather';
+
 const menuItems = {
     items: [
         {
             id: 'navigation',
             title: 'Navigation',
             type: 'group',
-            icon: 'icon-navigation',
+            icon: Navigation,
             children: [
                 {
                     id: 'dashboard',
                     title: 'Dashboard',
                     type: 'item',
-                    url: '/app/dashboard/default',
-                    icon: 'feather icon-home',
+                    url: '/dash',
+                    icon: Home,
+                },
+                {
+                    id: 'test-page',
+                    title: 'Test page',
+                    type: 'item',
+                    url: '/test',
+                    icon: Coffee,
                 }
             ]
         },
@@ -19,21 +41,14 @@ const menuItems = {
             id: 'ui-element',
             title: 'UI ELEMENT',
             type: 'group',
-            icon: 'icon-ui',
+            icon: UserX,
             children: [
                 {
                     id: 'basic',
                     title: 'Component',
                     type: 'collapse',
-                    icon: 'feather icon-box',
+                    icon: Box,
                     children: [
-
-                        {
-                            id: 'button',
-                            title: 'Button',
-                            type: 'item',
-                            url: '/basic/button'
-                        },
                         {
                             id: 'badges',
                             title: 'Badges',
@@ -47,16 +62,28 @@ const menuItems = {
                             url: '/basic/breadcrumb'
                         },
                         {
-                            id: 'pagination',
-                            title: 'Pagination',
+                            id: 'button',
+                            title: 'Button',
                             type: 'item',
-                            url: '/basic/pagination'
+                            url: '/basic/button'
                         },
                         {
                             id: 'collapse',
                             title: 'Collapse',
                             type: 'item',
                             url: '/basic/collapse'
+                        },
+                        {
+                            id: 'notification',
+                            title: 'Notifications',
+                            type: 'item',
+                            url: '/basic/notifications'
+                        },
+                        {
+                            id: 'pagination',
+                            title: 'Pagination',
+                            type: 'item',
+                            url: '/basic/pagination'
                         },
                         {
                             id: 'tabs-pills',
@@ -71,50 +98,67 @@ const menuItems = {
                             url: '/basic/typography'
                         }
                     ]
-                }
-            ]
-        },
-        {
-            id: 'forms-tables',
-            title: 'Forms & Tables',
-            type: 'group',
-            icon: 'icon-group',
-            children: [
-                {
-                    id: 'forms',
-                    title: 'Form Elements',
-                    type: 'item',
-                    url: '/forms/form-basic',
-                    icon: 'feather icon-file-text',
                 },
-                {
-                    id: 'tables',
-                    title: 'Table',
-                    type: 'item',
-                    url: '/tables/bootstrap',
-                    icon: 'feather icon-server',
-                }
-            ]
-        },
-        {
-            id: 'chart-maps',
-            title: 'Chart & Maps',
-            type: 'group',
-            icon: 'icon-charts',
-            children: [
                 {
                     id: 'charts',
                     title: 'Charts',
-                    type: 'item',
-                    url: '/charts/nvd3',
-                    icon: 'feather icon-pie-chart'
+                    type: 'collapse',
+                    icon: BarChart,
+                    children: [
+
+                        {
+                            id: 'line-chart',
+                            title: 'Line Chart',
+                            type: 'item',
+                            url: '/chart/line'
+                        },
+                        {
+                            id: 'discrete-bar',
+                            title: 'Discrete Bar',
+                            type: 'item',
+                            url: '/chart/discrete-bar'
+                        },
+                        {
+                            id: 'multi-bar',
+                            title: 'Multi Bar',
+                            type: 'item',
+                            url: '/chart/multi-bar'
+                        },
+                        {
+                            id: 'pie',
+                            title: 'Pie',
+                            type: 'item',
+                            url: '/chart/pie'
+                        },
+                        {
+                            id: 'donut',
+                            title: 'Donut',
+                            type: 'item',
+                            url: '/chart/donut'
+                        }
+                    ]
                 },
                 {
-                    id: 'maps',
-                    title: 'Map',
-                    type: 'item',
-                    url: '/maps/google-map',
-                    icon: 'feather icon-map'
+                    id: 'forms',
+                    title: 'Forms & Tables',
+                    type: 'collapse',
+                    icon: FileText,
+                    children: [
+                        {
+                            id: 'forms',
+                            title: 'Form Elements',
+                            type: 'item',
+                            url: '/forms/form-basic',
+                            icon: List,
+                        },
+                        {
+                            id: 'tables',
+                            title: 'Table',
+                            type: 'item',
+                            url: '/table/accounts',
+                            icon: Server,
+                        }
+                    ]
                 }
             ]
         },
@@ -122,60 +166,21 @@ const menuItems = {
             id: 'pages',
             title: 'Pages',
             type: 'group',
-            icon: 'icon-pages',
+            icon: Book,
             children: [
-                {
-                    id: 'auth',
-                    title: 'Authentication',
-                    type: 'collapse',
-                    icon: 'feather icon-lock',
-                    badge: {
-                        title: 'New',
-                        type: 'label-danger'
-                    },
-                    children: [
-                        {
-                            id: 'signup-1',
-                            title: 'Sign up',
-                            type: 'item',
-                            url: '/auth/signup-1',
-                            target: true,
-                            breadcrumbs: false
-                        },
-
-                        {
-                            id: 'signin-1',
-                            title: 'Sign in',
-                            type: 'item',
-                            url: '/auth/signin-1',
-                            target: true,
-                            breadcrumbs: false
-                        }
-                    ]
-                },
                 {
                     id: 'sample-page',
                     title: 'Sample Page',
                     type: 'item',
                     url: '/sample-page',
                     classes: 'nav-item',
-                    icon: 'feather icon-sidebar'
-                },
-                {
-                    id: 'documentation',
-                    title: 'Documentation',
-                    type: 'item',
-                    icon: 'feather icon-help-circle',
-                    classes: 'nav-item',
-                    url: 'https://codedthemes.com/item/datta-able-react-free-admin-template/#',
-                    target: true,
-                    external: true
+                    icon: Sidebar
                 },
                 {
                     id: 'menu-level',
                     title: 'Menu Levels',
                     type: 'collapse',
-                    icon: 'feather icon-menu',
+                    icon: Menu,
                     children: [
                         {
                             id: 'menu-level-1.1',
@@ -223,7 +228,7 @@ const menuItems = {
                     type: 'item',
                     url: '#',
                     classes: 'nav-item disabled',
-                    icon: 'feather icon-power'
+                    icon: Power
                 }
             ]
         }

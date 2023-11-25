@@ -1,6 +1,5 @@
 import React from 'react';
-import { Row, Col, Card, Tab, Tabs, Table } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
+import { Row, Col, Card, Tab, Tabs } from 'react-bootstrap';
 
 const Dashboard = () => {
     return (

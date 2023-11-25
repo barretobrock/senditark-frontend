@@ -1,6 +1,6 @@
 export const BASENAME = '';
 export const BASE_URL = '';
-export const BASE_TITLE = 'Hello there';
+export const BASE_TITLE = 'Senditark';
 
 export const CONFIG = {
     layout: 'vertical',                     // vertical, horizontal
