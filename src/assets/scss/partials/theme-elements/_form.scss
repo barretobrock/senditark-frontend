@@ -2,6 +2,11 @@
       Form Componant css start
 ==========================  **/
 
+.required label:after {
+  content: " *";
+  color: var(--bs-form-invalid-color);
+}
+
 .custom-select,
 .form-control {
   background: $theme-background;
@@ -139,7 +144,7 @@ select.form-control-lg:not([size]):not([multiple]) {
 }
 
 .was-validated .form-control:invalid ~ .invalid-feedback {
-  background: #fff;
+  //background: #fff;
   margin-top: 0;
   padding-top: 0.25em;
 }

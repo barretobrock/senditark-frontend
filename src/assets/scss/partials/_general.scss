@@ -1,6 +1,10 @@
 /**  =====================
       Custom css start
 ==========================  **/
+.text-muted td {
+  color: #7c7c7c;
+}
+
 body {
   font-family: $theme-font-family;
   font-size: $theme-font-size;
@@ -17,6 +21,7 @@ body {
 }
 
 a {
+  text-decoration: none;
   &:hover {
     outline: none;
     text-decoration: none;

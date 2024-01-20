@@ -71,6 +71,8 @@ const routes = [
             }
         ]
     },
+
+    // forms
     {
         exact: true,
         path: '/forms/form-basic',
@@ -78,8 +80,21 @@ const routes = [
     },
     {
         exact: true,
-        path: '/table/accounts',
-        component: lazy(() => import('./views/tables/Accounts'))
+        path: '/forms/new-account',
+        component: lazy(() => import('./views/forms/account/AccountForm'))
+    },
+
+    // tables
+    {
+        exact: true,
+        path: '/table/account',
+        component: lazy(() => import('./views/tables/AccountTable'))
+    },
+
+    // views
+    {
+        path: '/view/account/:id',
+        component: lazy(() => import('./views/AccountInfo'))
     },
     {
         exact: true,
@@ -120,72 +135,6 @@ const routes = [
         exact: true,
         path: '/basic/typography',
         component: lazy(() => import('./views/elements/BasicTypography'))
-    },
-    {
-        path: '*',
-        routes: [
-
-            // {
-            //     exact: true,
-            //     path: '/basic/badges',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicBadges'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/basic/breadcrumb',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicBreadcrumb'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/basic/pagination',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicPagination'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/basic/collapse',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicCollapse'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/basic/tabs-pills',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicTabsPills'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/basic/typography',
-            //     component: lazy(() => import('./views/ui-elements/basic/BasicTypography'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/forms/form-basic',
-            //     component: lazy(() => import('./views/forms/FormsElements'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/tables/bootstrap',
-            //     component: lazy(() => import('./views/tables/BootstrapTable'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/charts/nvd3',
-            //     component: lazy(() => import('./views/charts/nvd3-chart'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/maps/google-map',
-            //     component: lazy(() => import('./views/maps/GoogleMaps'))
-            // },
-            // {
-            //     exact: true,
-            //     path: '/sample-page',
-            //     component: lazy(() => import('./views/extra/SamplePage'))
-            // },
-            // {
-            //     path: '*',
-            //     exact: true,
-            //     element: () => <Navigate to={BASE_URL} />
-            // }
-        ]
     }
 ];
 

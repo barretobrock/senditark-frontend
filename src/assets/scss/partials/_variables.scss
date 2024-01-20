@@ -126,8 +126,29 @@ $alert-color-level: 6 !default;
 [data-bs-theme="tume"] {
   --bs-body-bg: #353d4b;
   --bs-table-color-state: #4b5360;
-  --bs-border-color: #6c879f;
-  --bs-secondary-color: #d2d2d2;
+  --bs-border-color: #7c7c7c;
+  --bs-secondary-color: #d2d2d2;  // d2d2d2
   --bs-body-color: #6eacf6; // headers, spans outside table
   --bs-emphasis-color: #d2d2d2;
+  .table-dark {
+    --bs-table-bg: #282E38;
+    --bs-table-hover-bg: #4c4f53;
+    --bs-table-border-color: #7c7c7c;
+    background-color: #1f242c;
+    th, td {
+      border-color: #899ec2;
+      border-style: dotted;
+    }
+  }
+  .table-secondary {
+    th,
+    td:nth-child(-n + 3),
+    td:nth-last-child(-n + 4) {
+      background-color: #282E38;
+    }
+    --bs-table-bg: #353C4A;
+    --bs-table-color: #d2d2d2;
+    --bs-table-hover-bg: #4c4f53;
+    --bs-table-hover-color: #d2d2d2;
+  }
 }

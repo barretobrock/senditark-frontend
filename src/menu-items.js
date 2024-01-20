@@ -10,11 +10,34 @@ import {
     Server,
     Book,
     Sidebar,
-    Menu, Power
+    Briefcase,
+    Menu, Power, Eye, Plus
 } from 'react-feather';
 
 const menuItems = {
     items: [
+        {
+            id: 'accounts',
+            title: 'Accounts',
+            type: 'group',
+            icon: Navigation,
+            children: [
+                {
+                    id: 'account-table',
+                    title: 'Accounts',
+                    type: 'item',
+                    url: '/table/account',
+                    icon: Briefcase,
+                },
+                {
+                    id: 'new-account',
+                    title: 'New Account',
+                    type: 'item',
+                    url: '/forms/new-account',
+                    icon: Plus,
+                }
+            ]
+        },
         {
             id: 'navigation',
             title: 'Navigation',
@@ -168,6 +191,21 @@ const menuItems = {
             type: 'group',
             icon: Book,
             children: [
+                {
+                    id: 'account-table',
+                    title: 'Account Table',
+                    type: 'item',
+                    url: '/table/account',
+                    classes: 'nav-item',
+                    icon: Briefcase
+                },  {
+                    id: 'account-info',
+                    title: 'Account Info Test',
+                    type: 'item',
+                    url: '/view/account',
+                    classes: 'nav-item',
+                    icon: Eye
+                },
                 {
                     id: 'sample-page',
                     title: 'Sample Page',

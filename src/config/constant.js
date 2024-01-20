@@ -1,5 +1,15 @@
+import axios from "axios";
+
 export const BASENAME = '';
 export const BASE_URL = '';
+// export const API_URL = 'http://localhost:5000'
+export const api = axios.create({
+    baseURL: 'http://localhost:5000',
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    }
+})
 export const BASE_TITLE = 'Senditark';
 
 export const CONFIG = {
